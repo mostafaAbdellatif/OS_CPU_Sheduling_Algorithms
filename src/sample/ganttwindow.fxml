@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+
+<ScrollPane fitToHeight="true" fitToWidth="true" pannable="true" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.FcfsganttController">
+   <content>
+      <AnchorPane prefHeight="512.0" prefWidth="691.0">
+         <children>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="232.0" layoutY="65.0" prefHeight="64.0" prefWidth="227.0" text="Gantt Chart" AnchorPane.leftAnchor="232.0" AnchorPane.rightAnchor="232.0">
+               <font>
+                  <Font size="43.0" />
+               </font>
+            </Label>
+            <HBox fx:id="gantcharts" alignment="CENTER" layoutY="206.0" prefHeight="91.0" prefWidth="691.0" AnchorPane.bottomAnchor="215.0" AnchorPane.topAnchor="206.0" />
+            <Label alignment="CENTER" contentDisplay="BOTTOM" layoutX="86.0" layoutY="401.0" prefHeight="34.0" prefWidth="192.0" text="Average Waiting Time is " AnchorPane.bottomAnchor="77.0" AnchorPane.leftAnchor="86.0">
+               <font>
+                  <Font name="System Bold Italic" size="16.0" />
+               </font>
+            </Label>
+            <Label fx:id="avgWaitingTime" alignment="CENTER" contentDisplay="CENTER" layoutX="293.0" layoutY="401.0" prefHeight="34.0" prefWidth="192.0" AnchorPane.bottomAnchor="77.0">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </content>
+</ScrollPane>

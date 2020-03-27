@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<ScrollPane xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.FcfsganttController">
+   <content>
+      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="1200.0">
+         <children>
+            <ScrollPane layoutY="150.0" prefHeight="100.0" prefWidth="1200.0" AnchorPane.bottomAnchor="150.0" AnchorPane.topAnchor="150.0">
+               <content>
+                  <HBox fx:id="gantchart" prefHeight="100.0" prefWidth="1200.0" />
+               </content>
+            </ScrollPane>
+            <Label layoutX="193.0" layoutY="50.0" prefHeight="74.0" prefWidth="217.0" text="Gantt Chart" AnchorPane.leftAnchor="491.0" AnchorPane.rightAnchor="491.0">
+               <font>
+                  <Font size="40.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" contentDisplay="BOTTOM" layoutX="57.0" layoutY="333.0" prefHeight="31.0" prefWidth="220.0" text="Average Waiting Time">
+               <font>
+                  <Font name="System Bold Italic" size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="avgWaitingTime" contentDisplay="BOTTOM" layoutX="303.0" layoutY="333.0" prefHeight="31.0" prefWidth="261.0">
+               <font>
+                  <Font size="20.0" />
+               </font></Label>
+         </children>
+      </AnchorPane>
+   </content>
+</ScrollPane>

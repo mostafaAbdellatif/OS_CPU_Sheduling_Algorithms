@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <children>
+      <HBox alignment="BOTTOM_CENTER" layoutX="43.0" layoutY="-2868.0" prefHeight="84.0" prefWidth="514.0" spacing="60.0" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0">
+         <children>
+            <Button fx:id="Fcfs" mnemonicParsing="false" onAction="#pressFCFSButton" prefHeight="94.0" prefWidth="101.0" text="FCFS" />
+            <Button mnemonicParsing="false" prefHeight="94.0" prefWidth="101.0" text="SJF" />
+            <Button mnemonicParsing="false" prefHeight="94.0" prefWidth="101.0" text="Priority" />
+            <Button mnemonicParsing="false" prefHeight="94.0" prefWidth="101.0" text="RoundRobin" />
+         </children>
+         <padding>
+            <Insets bottom="30.0" />
+         </padding>
+      </HBox>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="171.0" layoutY="59.0" prefHeight="115.0" prefWidth="399.0" text="CPU Scheduler" textAlignment="CENTER" textOverrun="CLIP" AnchorPane.bottomAnchor="337.0" AnchorPane.leftAnchor="146.0" AnchorPane.rightAnchor="146.0" AnchorPane.topAnchor="60.0">
+         <font>
+            <Font name="Arial Italic" size="47.0" />
+         </font>
+         <padding>
+            <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+         </padding>
+      </Label>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="189.0" layoutY="214.0" prefHeight="84.0" prefWidth="362.0" snapToPixel="false" text="Choose a Scheduler Type" textAlignment="CENTER" AnchorPane.bottomAnchor="214.0" AnchorPane.leftAnchor="146.0" AnchorPane.rightAnchor="146.0" AnchorPane.topAnchor="214.0">
+         <font>
+            <Font size="31.0" />
+         </font>
+      </Label>
+   </children>
+   <cursor>
+      <Cursor fx:constant="CLOSED_HAND" />
+   </cursor>
+</AnchorPane>
