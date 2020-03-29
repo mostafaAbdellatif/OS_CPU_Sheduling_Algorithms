@@ -45,6 +45,11 @@ public class publicVariables {
         }
     }
 
+    public void indexingProcess(){
+        for (int x = 0; x < processData.size(); x++) {
+            processData.get(x).add(x + 1);
+        }
+    }
 
     public Button makeButton(int processIndex,int width)
     {

@@ -27,9 +27,8 @@ public class RRChartController {
 
         System.out.println(publicVariablesObject.processData);
 
-        for (int x = 0; x < publicVariablesObject.processData.size(); x++) {
-            publicVariablesObject.processData.get(x).add(x + 1);
-        }
+        publicVariablesObject.indexingProcess();
+
         System.out.println(publicVariablesObject.processData);
 
 
@@ -49,14 +48,10 @@ public class RRChartController {
                     //  m = 0;
                //     publicVariablesObject.processData.remove(x);
               // }
-                //  else
-                //  {
 
-                //  }
                 System.out.println(publicVariablesObject.processData);
             }
 
-           // int s = publicVariablesObject.processData.size();
             for (int x = 0; x < s; x++) {
                 try{
                 if (publicVariablesObject.processData.get(x).get(1) <= 0) {
