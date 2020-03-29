@@ -1,50 +1,48 @@
-package sample;
+package sample.RoundRobin;
 
-import javafx.beans.property.StringProperty;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.geometry.HPos;
 import javafx.geometry.Pos;
-import javafx.scene.*;
-import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
-import javafx.scene.control.*;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ContentDisplay;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
-import javafx.scene.text.Text;
 import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
+import sample.publicVariables;
 
-import javax.swing.*;
-import java.awt.*;
 import java.io.IOException;
-import java.util.*;
-import java.util.List;
+import java.util.ArrayList;
 
-public class FcfswinController {
-    Main helloObject = new Main();
+public class RRController {
+
+    publicVariables publicVariablesObject = new publicVariables();
+
     @FXML
-    private TextField input;
+    private TextField noProcesses;
+    @FXML
+    private TextField quantum;
+    @FXML
+    private Button okButton;
+    @FXML
+    private Button beginButton;
     @FXML
     private VBox processId;
     @FXML
     private VBox startTime;
     @FXML
     private VBox burstTime;
-    @FXML
-    private Button enterOk;
-    //@FXML
-    //private HBox gantchart;
+
+
     public ArrayList<TextField> starts = new ArrayList(100);
     public ArrayList<TextField> bursts = new ArrayList(100);
+
+
     public void okEntred(ActionEvent event) throws Exception {
 
         processId.getChildren().clear();
@@ -52,10 +50,11 @@ public class FcfswinController {
         burstTime.getChildren().clear();
 
 
-        if (!input.getText().isEmpty()) {
+        if (!noProcesses.getText().isEmpty() && !quantum.getText().isEmpty()) {
 
 
-            int inputNumber = Integer.parseInt(input.getText());
+            int inputNumber = Integer.parseInt(noProcesses.getText());
+            publicVariablesObject.quantum = Integer.parseInt(quantum.getText());
 
 
             for (int x = 1; x <= inputNumber; x++) {
@@ -66,6 +65,7 @@ public class FcfswinController {
                 y.setContentDisplay(ContentDisplay.CENTER);
                 processId.getChildren().addAll(y);
                 processId.setFillWidth(true);
+
                 TextField start = new TextField();
                 start.setFont(new Font("Regular", 12));
                 start.setPromptText("Process "+ x + " Start");
@@ -89,41 +89,39 @@ public class FcfswinController {
         }
     }
 
-    public void endOk (ActionEvent event) throws Exception {
-            boolean x = true;
-            boolean y = true;
-            //to delete all avalues in array and add the new written
-            FcfsganttController.starts.clear();
-            FcfsganttController.bursts.clear();
-            for (int i = 0; i < Integer.parseInt(input.getText()); i++) {
 
-                if (!starts.get(i).getText().isEmpty()) {
-                    System.out.println(starts.get(i).getText());
-                    float f = Float.parseFloat(starts.get(i).getText());
-                    FcfsganttController.starts.add(f);
-                } else {
-                    starts.get(i).setPromptText("Fill all");
-                    x = false;
-                }
+    public void beginEntered (ActionEvent event) throws Exception {
+        boolean x = true;
+        boolean y = true;
+        //to delete all avalues in array and add the new written
+        publicVariablesObject.starts.clear();
+        publicVariablesObject.bursts.clear();
+
+        for (int i = 0; i < Integer.parseInt(noProcesses.getText()); i++) {
+
+            if (!starts.get(i).getText().isEmpty()) {
+                int f = Integer.parseInt(starts.get(i).getText());
+                publicVariablesObject.starts.add(f);
+            } else {
+                starts.get(i).setPromptText("Fill all");
+                x = false;
             }
-        for (int i = 0; i < Integer.parseInt(input.getText()); i++) {
+        }
+        for (int i = 0; i < Integer.parseInt(noProcesses.getText()); i++) {
 
             if (!bursts.get(i).getText().isEmpty()) {
-                System.out.println(bursts.get(i).getText());
-                float k = Float.parseFloat(bursts.get(i).getText());
-                FcfsganttController.bursts.add(k);
+                int k = Integer.parseInt(bursts.get(i).getText());
+                publicVariablesObject.bursts.add(k);
             } else {
                 bursts.get(i).setPromptText("Fill all");
                 y = false;
             }
         }
-     //we have to come out with true x and y to make sure that all fields are filled;
+        //we have to come out with true x and y to make sure that all fields are filled;
         if((x && y) == true){
             try {
-                FXMLLoader loader=new FXMLLoader(getClass().getResource("fcfsganttwindow.fxml"));
+                FXMLLoader loader=new FXMLLoader(getClass().getResource("RRChart.fxml"));
                 Parent root = (Parent) loader.load();
-
-                //FcfsganttController gnty = loader.getController();
                 Stage stage=new Stage();
                 stage.setScene(new Scene(root));
                 stage.setTitle("GanttChart");
@@ -131,14 +129,11 @@ public class FcfswinController {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-             //if we want it on same stage
-            /*Parent root = FXMLLoader.load(getClass().getResource("fcfsgantt.fxml"));
-            helloObject.getStage().setTitle("FSFC");
-            helloObject.getStage().setScene(new Scene(root));
-        */
         }
 
     }
+
+
 
 
 }

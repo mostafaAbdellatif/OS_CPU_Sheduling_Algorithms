@@ -1,19 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+<AnchorPane xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
    <children>
       <HBox alignment="BOTTOM_CENTER" layoutX="43.0" layoutY="-2868.0" prefHeight="84.0" prefWidth="514.0" spacing="60.0" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0">
          <children>
             <Button fx:id="Fcfs" mnemonicParsing="false" onAction="#pressFCFSButton" prefHeight="94.0" prefWidth="101.0" text="FCFS" />
             <Button mnemonicParsing="false" prefHeight="94.0" prefWidth="101.0" text="SJF" />
             <Button mnemonicParsing="false" prefHeight="94.0" prefWidth="101.0" text="Priority" />
-            <Button mnemonicParsing="false" prefHeight="94.0" prefWidth="101.0" text="RoundRobin" />
+            <Button fx:id="roundRobinButton" mnemonicParsing="false" onAction="#pressroundRobinButtonButton" prefHeight="94.0" prefWidth="101.0" text="RoundRobin" />
          </children>
          <padding>
             <Insets bottom="30.0" />
