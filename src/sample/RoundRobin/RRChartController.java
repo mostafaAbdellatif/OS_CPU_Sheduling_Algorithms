@@ -6,6 +6,8 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
 import sample.publicVariables;
 
+
+
 public class RRChartController {
 
     publicVariables publicVariablesObject = new publicVariables();
@@ -17,17 +19,17 @@ public class RRChartController {
 
     public void initialize() {
 
-        publicVariables.processData.clear();
+        publicVariablesObject.processData.clear();
 
-        publicVariablesObject.makeCombination();
-
-        System.out.println(publicVariablesObject.processData);
-
-        publicVariablesObject.ordering();
+        publicVariablesObject.makeCombination();  //add start, burst,process name together
 
         System.out.println(publicVariablesObject.processData);
 
-        publicVariablesObject.indexingProcess();
+        publicVariablesObject.ordering(publicVariablesObject.start);
+
+        System.out.println(publicVariablesObject.processData);
+
+        //publicVariablesObject.indexingProcess();
 
         System.out.println(publicVariablesObject.processData);
 

@@ -6,6 +6,10 @@ import java.util.*;
 
 public class publicVariables {
 
+    public static int start = 0;
+    public static int burst = 1;
+    public static Boolean permative = Boolean.FALSE;
+
     public static ArrayList<Integer> starts = new ArrayList(100);
     public static ArrayList<Integer> bursts = new ArrayList(100);
 
@@ -21,15 +25,16 @@ public class publicVariables {
             ArrayList<Integer> l = new ArrayList();
             l.add(starts.get(x));
             l.add(bursts.get(x));
+            l.add(x+1);
             processData.add(l);
         }
     }
 
-    public void ordering(){
+    public void ordering(int startORburst){
         int s = processData.size();
         for (int i = 0; i < s; i++) {
             for (int j = 1; j < (s - i); j++) {
-                if (processData.get(j - 1).get(0) > processData.get(j).get(0)) {
+                if (processData.get(j - 1).get(startORburst) > processData.get(j).get(startORburst)) {
                     ArrayList<ArrayList<Integer>> l = new ArrayList();
                     l.clear();
                     l.add(processData.get(j - 1));
@@ -61,6 +66,57 @@ public class publicVariables {
         H.setMinWidth(width * 50);
 
         return H;
+    }
+
+    public void orderingStartThenBurst()
+    {
+        int s = processData.size();
+        for (int i = 0; i < s; i++) {
+            for (int j = 1; j < (s - i); j++) {
+                if (processData.get(j - 1).get(0) > processData.get(j).get(0)) {
+                    ArrayList<ArrayList<Integer>> l = new ArrayList();
+                    l.clear();
+                    l.add(processData.get(j - 1));
+                    processData.remove(j - 1);
+
+                    try {
+                        processData.add(j, l.get(0));
+                    } catch (Exception e) {
+                        processData.set(j, l.get(0));
+                    }
+                }
+                else if (processData.get(j - 1).get(0) == processData.get(j).get(0)){
+                    if (processData.get(j-1).get(1)>processData.get(j).get(1)){
+                        ArrayList<ArrayList<Integer>> l = new ArrayList();
+                        l.clear();
+                        l.add(processData.get(j - 1));
+                        processData.remove(j - 1);
+                        processData.add(j, l.get(0));
+                    }
+                }
+            }
+        }
+    }
+
+
+    public void ordering(int startORburst,int size){
+        int s = size;
+        for (int i = 0; i < s; i++) {
+            for (int j = 1; j < (s - i); j++) {
+                if (processData.get(j - 1).get(startORburst) > processData.get(j).get(startORburst)) {
+                    ArrayList<ArrayList<Integer>> l = new ArrayList();
+                    l.clear();
+                    l.add(processData.get(j - 1));
+                    processData.remove(j - 1);
+
+                    try {
+                        processData.add(j, l.get(0));
+                    } catch (Exception e) {
+                        processData.set(j, l.get(0));
+                    }
+                }
+            }
+        }
     }
 
 }

@@ -29,7 +29,7 @@
             </Label>
             <TextField fx:id="noProcesses" layoutX="179.0" layoutY="78.0" prefHeight="25.0" prefWidth="101.0" />
             <TextField fx:id="quantum" layoutX="405.0" layoutY="78.0" prefHeight="25.0" prefWidth="86.0" />
-            <Button fx:id="okButton" layoutX="519.0" layoutY="75.0" mnemonicParsing="false" onAction="#okEntred" text="begin">
+            <Button fx:id="okButton" layoutX="519.0" layoutY="75.0" mnemonicParsing="false" onAction="#okEntred" text="OK">
                <font>
                   <Font size="14.0" />
                </font>

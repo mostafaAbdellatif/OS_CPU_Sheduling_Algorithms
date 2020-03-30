@@ -20,6 +20,8 @@ public class Controller {
     private VBox processId;
     @FXML
     private Button roundRobinButton;
+    @FXML
+    private Button shortJobButton;
 
 
     @FXML
@@ -36,6 +38,16 @@ public class Controller {
 
         Parent root = FXMLLoader.load(getClass().getResource("RoundRobin/RRWin.fxml"));
         helloObject.getStage().setTitle("RoundRobin");
+        helloObject.getStage().setScene(new Scene(root));
+
+    }
+
+
+    @FXML
+    public void pressShortJobButton(ActionEvent actionEvent) throws IOException {
+
+        Parent root = FXMLLoader.load(getClass().getResource("ShortJobFirst/SJFWin.fxml"));
+        helloObject.getStage().setTitle("ShortJobFirst");
         helloObject.getStage().setScene(new Scene(root));
 
     }
