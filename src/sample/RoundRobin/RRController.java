@@ -54,7 +54,7 @@ public class RRController {
 
 
             int inputNumber = Integer.parseInt(noProcesses.getText());
-            publicVariablesObject.quantum = Integer.parseInt(quantum.getText());
+
 
 
             for (int x = 1; x <= inputNumber; x++) {
@@ -96,6 +96,7 @@ public class RRController {
         //to delete all avalues in array and add the new written
         publicVariablesObject.starts.clear();
         publicVariablesObject.bursts.clear();
+        publicVariablesObject.quantum = Integer.parseInt(quantum.getText());
 
         for (int i = 0; i < Integer.parseInt(noProcesses.getText()); i++) {
 
