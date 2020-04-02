@@ -29,8 +29,12 @@ public class publicVariables {
             l.add(starts.get(x));
             l.add(bursts.get(x));
             l.add(x + 1);
-            l.add(priority.get(x));
-            processData.add(l);
+            try {
+                l.add(priority.get(x));
+                processData.add(l);
+            }catch (Exception e){
+                processData.add(l);
+            }
         }
     }
 
