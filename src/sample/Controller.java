@@ -52,4 +52,14 @@ public class Controller {
 
     }
 
+    @FXML
+    public void pressPriorityButton(ActionEvent actionEvent) throws IOException {
+
+        Parent root = FXMLLoader.load(getClass().getResource("Priority/PriorityWindow.fxml"));
+        helloObject.getStage().setTitle("Priority");
+        helloObject.getStage().setScene(new Scene(root));
+
+    }
+
+
 }
