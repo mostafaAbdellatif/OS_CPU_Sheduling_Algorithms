@@ -29,6 +29,7 @@ public class SJFChartController {
 
 // clear previous data from prossessData
         publicVariablesObject.processData.clear();
+        workProcess.clear();
 
 // combine all process data together [start,burst,index]
         publicVariablesObject.makeCombination();
@@ -41,17 +42,32 @@ public class SJFChartController {
 
             System.out.println(publicVariablesObject.processData);
 
-            for (int x = 0; x < publicVariablesObject.processData.size(); x++) {
+            int timeLine = publicVariablesObject.processData.get(0).get(0);
 
+            int size = publicVariablesObject.processData.size();
+
+            for (int x = 0; x < size; x++) {
+                try {
 //2- make button for each process
-                Button H = publicVariablesObject.makeButton(publicVariablesObject.processData.get(x).get(2), publicVariablesObject.processData.get(x).get(1));
-                gantchart.getChildren().add(H);
+                    Button H = publicVariablesObject.makeButton(publicVariablesObject.processData.get(0).get(2), publicVariablesObject.processData.get(0).get(1));
+                    gantchart.getChildren().add(H);
 
-//3- subtract burst-burst to make burst time of each process equal zero
-                int m = publicVariablesObject.processData.get(x).get(1) - publicVariablesObject.processData.get(x).get(1);
-                publicVariablesObject.processData.get(x).set(1, m);
+                    timeLine += publicVariablesObject.processData.get(0).get(1);
+                    publicVariablesObject.processData.remove(0);
+                    int oSize = 0;
+
+                    for (int m = 0; m < publicVariablesObject.processData.size(); m++) {
+                        if (publicVariablesObject.processData.get(m).get(0) <= timeLine) {
+                            oSize += 1;
+                        }
+                    }
+                    publicVariablesObject.ordering(1, oSize);
+                }catch (Exception e){
+                    continue;
+                }
             }
         }
+
 
         //////////////////////Permative//////////////////////////////
         else {

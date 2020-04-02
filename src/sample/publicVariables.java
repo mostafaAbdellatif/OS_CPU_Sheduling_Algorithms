@@ -159,4 +159,16 @@ public class publicVariables {
 
     }
 
+    public Button makeButton(int processIndex, int width,float arrival,float finish) {
+        Button H = new Button();
+        //timeline variable to have a timeline dependent on all processes;
+        H.setText("Process " + (processIndex) + "\n" + arrival +"\t"+finish);
+        H.setAlignment(Pos.CENTER);
+        H.setMinHeight(100);
+        H.setMinWidth(width * 50);
+
+        return H;
+    }
+
+
 }

@@ -24,9 +24,9 @@ public class PriorityGantController {
 // combine all process data together [start,burst,index,priority]
         publicVariablesObject.makeCombination();
         //order data according to arrival time
-        System.out.println(publicVariablesObject.processData.get(0));
-        System.out.println(publicVariablesObject.processData.get(1));
-        System.out.println(publicVariablesObject.processData.get(2));
+        //System.out.println(publicVariablesObject.processData.get(0));
+        //System.out.println(publicVariablesObject.processData.get(1));
+        //System.out.println(publicVariablesObject.processData.get(2));
         publicVariablesObject.ordering(0);
         int size = publicVariablesObject.processData.size();
         int numberOfProcess = size;
