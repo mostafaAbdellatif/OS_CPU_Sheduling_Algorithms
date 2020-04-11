@@ -14,6 +14,7 @@ import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
+import sample.Main;
 import sample.publicVariables;
 
 import java.io.IOException;
@@ -22,6 +23,8 @@ import java.util.ArrayList;
 public class RRController {
 
     publicVariables publicVariablesObject = new publicVariables();
+    Main helloObject = new Main();
+
 
     @FXML
     private TextField noProcesses;
@@ -37,6 +40,8 @@ public class RRController {
     private VBox startTime;
     @FXML
     private VBox burstTime;
+    @FXML
+    private Button BackToHome;
 
 
     public ArrayList<TextField> starts = new ArrayList(100);
@@ -134,7 +139,11 @@ public class RRController {
 
     }
 
-
-
+    @FXML
+    public void homeEntered(ActionEvent event) throws Exception{
+        Parent root = FXMLLoader.load(getClass().getResource("../start.fxml"));
+        helloObject.getStage().setTitle("CPU Scheduler");
+        helloObject.getStage().setScene(new Scene(root, 980, 512));
+    }
 
 }

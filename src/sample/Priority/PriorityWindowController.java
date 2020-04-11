@@ -11,6 +11,7 @@ import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
+import sample.Main;
 import sample.publicVariables;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -20,6 +21,8 @@ import java.util.ArrayList;
 public class PriorityWindowController {
 
     publicVariables publicVariablesObject = new publicVariables();
+    Main helloObject = new Main();
+
     @FXML
     private Button okButtn;
     @FXML
@@ -36,6 +39,8 @@ public class PriorityWindowController {
     private VBox priority;
     @FXML
     private CheckBox preemptiveBox;
+    @FXML
+    private Button BackToHome;
 
     public ArrayList<TextField> starts = new ArrayList(100);
     public ArrayList<TextField> bursts = new ArrayList(100);
@@ -160,4 +165,12 @@ public class PriorityWindowController {
             publicVariablesObject.permative = Boolean.TRUE;
         }
     }
+
+    @FXML
+    public void homeEntered(ActionEvent event) throws Exception{
+        Parent root = FXMLLoader.load(getClass().getResource("../start.fxml"));
+        helloObject.getStage().setTitle("CPU Scheduler");
+        helloObject.getStage().setScene(new Scene(root, 980, 512));
+    }
+
 }

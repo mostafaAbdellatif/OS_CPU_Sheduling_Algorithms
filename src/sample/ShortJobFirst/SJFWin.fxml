@@ -49,6 +49,7 @@
             </Button>
             <Button fx:id="beginButton" layoutX="507.0" layoutY="487.0" mnemonicParsing="false" onAction="#beginEntered" text="Begin" />
             <CheckBox fx:id="permativeBox" layoutX="507.0" layoutY="442.0" mnemonicParsing="false" onAction="#handlePermativeBox" text="permative" />
+            <Button fx:id="BackToHome" layoutX="27.0" layoutY="32.0" mnemonicParsing="false" onAction="#homeEntered" text="Back To Home" />
          </children></AnchorPane>
   </content>
 </ScrollPane>

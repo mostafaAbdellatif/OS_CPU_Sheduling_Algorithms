@@ -53,6 +53,7 @@
             <VBox fx:id="startTime" layoutX="241.0" layoutY="148.0" prefHeight="200.0" prefWidth="100.0" />
             <VBox fx:id="burstTime" layoutX="405.0" layoutY="148.0" prefHeight="200.0" prefWidth="100.0" />
             <Button fx:id="beginButton" layoutX="523.0" layoutY="348.0" mnemonicParsing="false" onAction="#beginEntered" text="Begin" />
+            <Button fx:id="BackToHome" layoutX="43.0" layoutY="39.0" mnemonicParsing="false" onAction="#homeEntered" text="Back to Home" />
          </children></AnchorPane>
   </content>
 </ScrollPane>
