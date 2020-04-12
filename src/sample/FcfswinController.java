@@ -43,6 +43,8 @@ public class FcfswinController {
     private Button enterOk;
     //@FXML
     //private HBox gantchart;
+    @FXML
+    private Button fcfsBack;
     public ArrayList<TextField> starts = new ArrayList(100);
     public ArrayList<TextField> bursts = new ArrayList(100);
     public void okEntred(ActionEvent event) throws Exception {

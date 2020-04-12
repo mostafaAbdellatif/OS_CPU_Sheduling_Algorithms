@@ -11,6 +11,7 @@ import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
+import sample.Main;
 import sample.publicVariables;
 
 import java.io.IOException;
@@ -18,6 +19,7 @@ import java.util.ArrayList;
 
 public class SJFController {
 
+    Main helloObject = new Main();
     publicVariables publicVariablesObject = new publicVariables();
 
     @FXML
@@ -131,6 +133,13 @@ public class SJFController {
             publicVariablesObject.permative = Boolean.TRUE;
         }
     }
+
+/*    public void shortBack(ActionEvent event) throws Exception {
+        Parent root = FXMLLoader.load(getClass().getResource("start.fxml"));
+        helloObject.getStage().setTitle("CPU Scheduler");
+        helloObject.getStage().setScene(new Scene(root));
+    }
+*/
 
 
 

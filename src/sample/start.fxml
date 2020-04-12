@@ -14,7 +14,7 @@
          <children>
             <Button fx:id="Fcfs" mnemonicParsing="false" onAction="#pressFCFSButton" prefHeight="94.0" prefWidth="101.0" text="FCFS" />
             <Button fx:id="shortJobButton" mnemonicParsing="false" onAction="#pressShortJobButton" prefHeight="94.0" prefWidth="101.0" text="SJF" />
-            <Button fx:id="priorityButton" onAction="#pressPriorityButton" mnemonicParsing="false" prefHeight="94.0" prefWidth="101.0" text="Priority" />
+            <Button fx:id="priorityButton" mnemonicParsing="false" onAction="#pressPriorityButton" prefHeight="94.0" prefWidth="101.0" text="Priority" />
             <Button fx:id="roundRobinButton" mnemonicParsing="false" onAction="#pressroundRobinButtonButton" prefHeight="94.0" prefWidth="101.0" text="RoundRobin" />
          </children>
          <padding>
@@ -36,6 +36,6 @@
       </Label>
    </children>
    <cursor>
-      <Cursor fx:constant="CLOSED_HAND" />
+      <Cursor fx:constant="DEFAULT" />
    </cursor>
 </AnchorPane>

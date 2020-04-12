@@ -56,8 +56,17 @@ public class FcfsganttController {
         for (int i = 0; i < starts.size(); i++) {
             Button H = new Button();
             //timeline variable to have a timeline dependent on all processes;
-            H.setText("Process " + (index.get(i)+1) + "\n" + timeline + "\t   " + (bursts.get(i)+timeline));
-            avgWaitTime += timeline - starts.get(i);
+            if(timeline >= starts.get(i)) {
+                H.setText("Process " + (index.get(i) + 1) + "\n" + timeline + "\t   " + (bursts.get(i) + timeline));
+                avgWaitTime += timeline - starts.get(i);
+                timeline+=bursts.get(i);
+            }
+            else{
+                //3lshan lma yekoon feh process gya feh wa2t be3id tebda2 3and el arrival time bta3ha;
+                H.setText("Process " + (index.get(i) + 1) + "\n" + starts.get(i) + "\t   " + (bursts.get(i) + starts.get(i)));
+                avgWaitTime += starts.get(i) - starts.get(i);
+                timeline=bursts.get(i)+starts.get(i);
+            }
             timeline+=bursts.get(i);
             H.setAlignment(Pos.CENTER);
             H.setMinHeight(100);

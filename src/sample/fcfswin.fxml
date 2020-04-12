@@ -54,8 +54,8 @@
                   </Label>
                </children>
             </VBox>
-            <Button fx:id="okButtn" layoutX="535.0" layoutY="185.0" mnemonicParsing="false" onAction="#okEntred" text="ok" AnchorPane.rightAnchor="127.0" />
-            <Button fx:id="enterOk" layoutX="632.0" layoutY="459.0" mnemonicParsing="false" onAction="#endOk" text="ok" AnchorPane.bottomAnchor="28.0" AnchorPane.rightAnchor="30.0" />
+            <Button fx:id="okButtn" layoutX="535.0" layoutY="175.0" mnemonicParsing="false" onAction="#okEntred" prefHeight="35.0" prefWidth="47.0" text="ok" AnchorPane.rightAnchor="109.0" />
+            <Button fx:id="enterOk" layoutX="632.0" layoutY="459.0" mnemonicParsing="false" onAction="#endOk" prefHeight="39.0" prefWidth="52.0" text="ok" AnchorPane.bottomAnchor="28.0" AnchorPane.rightAnchor="30.0" />
          </children>
       </AnchorPane>
    </content>
