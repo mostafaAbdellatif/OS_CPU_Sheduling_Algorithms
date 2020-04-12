@@ -21,7 +21,7 @@ public class SJFController {
 
     Main helloObject = new Main();
     publicVariables publicVariablesObject = new publicVariables();
-    Main helloObject = new Main();
+
 
     @FXML
     private TextField noProcesses;

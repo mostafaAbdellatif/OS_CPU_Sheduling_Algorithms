@@ -164,6 +164,9 @@ public class PriorityWindowController {
         if(preemptiveBox.isSelected()){
             publicVariablesObject.permative = Boolean.TRUE;
         }
+        else{
+            publicVariablesObject.permative = Boolean.FALSE;
+        }
     }
 
     @FXML

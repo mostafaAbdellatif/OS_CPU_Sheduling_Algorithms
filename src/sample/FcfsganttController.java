@@ -52,7 +52,7 @@ public class FcfsganttController {
             }
         }
         float timeline = starts.get(0);
-        //gantt drawing;
+        //gantt drawing we want to draw a button;
         for (int i = 0; i < starts.size(); i++) {
             Button H = new Button();
             //timeline variable to have a timeline dependent on all processes;
@@ -63,11 +63,13 @@ public class FcfsganttController {
             }
             else{
                 //3lshan lma yekoon feh process gya feh wa2t be3id tebda2 3and el arrival time bta3ha;
+                Button idle = idleButton((int) (starts.get(i)-timeline));
+                gantchart.getChildren().add(idle);
                 H.setText("Process " + (index.get(i) + 1) + "\n" + starts.get(i) + "\t   " + (bursts.get(i) + starts.get(i)));
                 avgWaitTime += starts.get(i) - starts.get(i);
                 timeline=bursts.get(i)+starts.get(i);
             }
-            timeline+=bursts.get(i);
+            //timeline+=bursts.get(i);
             H.setAlignment(Pos.CENTER);
             H.setMinHeight(100);
             H.setMinWidth((bursts.get(i))*50);
@@ -79,6 +81,16 @@ public class FcfsganttController {
         System.out.println((avgWaitTime/starts.size()));
 
 
+    }
+    public Button idleButton(int width) {
+        Button H = new Button();
+        //timeline variable to have a timeline dependent on all processes;
+        H.setText("idle" + "\n"+ "  " + String.valueOf(width) );
+        H.setAlignment(Pos.CENTER);
+        H.setMinHeight(100);
+        H.setMinWidth(width * 50);
+
+        return H;
     }
 
 }

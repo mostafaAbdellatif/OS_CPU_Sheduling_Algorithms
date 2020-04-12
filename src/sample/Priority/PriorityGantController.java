@@ -49,6 +49,8 @@ public class PriorityGantController {
                     timeline += publicVariablesObject.processData.get(0).get(1);
                 }
                 else{
+                    Button idle = idleButton(publicVariablesObject.processData.get(0).get(0)-timeline);
+                    gantchart.getChildren().add(idle);
                     H.setText("Process " + publicVariablesObject.processData.get(0).get(2) + "\n" + publicVariablesObject.processData.get(0).get(0) + "\t   " + ((publicVariablesObject.processData.get(0).get(1)) + publicVariablesObject.processData.get(0).get(0)));
                     //avgWaitTime += timeline - publicVariablesObject.processData.get(0).get(0);
                     timeline = publicVariablesObject.processData.get(0).get(0)+publicVariablesObject.processData.get(0).get(1);
@@ -88,8 +90,15 @@ public class PriorityGantController {
                 if (previous_on_cpu == index_on_cpu || check == -1) {
                     timeline = timeline + 1;
                     //added to make sure the process dont enter cpu unless its time for it
-                    while(timeline<=publicVariablesObject.processData.get(0).get(0)){
-                        timeline++;
+                    if(timeline<=publicVariablesObject.processData.get(0).get(0)) {
+
+
+                        Button idle = idleButton(publicVariablesObject.processData.get(0).get(0) - (timeline-1));
+                        gantchart.getChildren().add(idle);
+                        while (timeline <= publicVariablesObject.processData.get(0).get(0)) {
+                            timeline++;
+                        }
+
                     }
                     time_on_cpu = time_on_cpu + 1;
                     if (time_on_cpu == publicVariablesObject.processData.get(0).get(1)) { //remove process it finished
@@ -157,6 +166,19 @@ public class PriorityGantController {
         }
         return -1;
     }
+
+    public Button idleButton(int width) {
+        Button H = new Button();
+        //timeline variable to have a timeline dependent on all processes;
+        H.setText("idle" + "\n" +"  "+ String.valueOf(width) );
+        H.setAlignment(Pos.CENTER);
+        H.setMinHeight(100);
+        H.setMinWidth(width * 50);
+
+        return H;
+    }
+
+
 }
 
 
