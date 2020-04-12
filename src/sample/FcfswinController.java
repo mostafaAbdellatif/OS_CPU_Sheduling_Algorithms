@@ -31,6 +31,7 @@ import java.util.List;
 
 public class FcfswinController {
     Main helloObject = new Main();
+
     @FXML
     private TextField input;
     @FXML
@@ -41,6 +42,9 @@ public class FcfswinController {
     private VBox burstTime;
     @FXML
     private Button enterOk;
+    @FXML
+    private Button BackToHome;
+
     //@FXML
     //private HBox gantchart;
     @FXML
@@ -140,6 +144,13 @@ public class FcfswinController {
         */
         }
 
+    }
+
+    @FXML
+    public void homeEntered(ActionEvent event) throws Exception{
+        Parent root = FXMLLoader.load(getClass().getResource("start.fxml"));
+        helloObject.getStage().setTitle("CPU Scheduler");
+        helloObject.getStage().setScene(new Scene(root, 980, 512));
     }
 
 

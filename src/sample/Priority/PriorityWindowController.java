@@ -20,8 +20,9 @@ import java.util.ArrayList;
 
 public class PriorityWindowController {
 
-    Main helloObject = new Main();
     publicVariables publicVariablesObject = new publicVariables();
+    Main helloObject = new Main();
+
     @FXML
     private Button okButtn;
     @FXML
@@ -38,6 +39,8 @@ public class PriorityWindowController {
     private VBox priority;
     @FXML
     private CheckBox preemptiveBox;
+    @FXML
+    private Button BackToHome;
 
     public ArrayList<TextField> starts = new ArrayList(100);
     public ArrayList<TextField> bursts = new ArrayList(100);
@@ -161,16 +164,13 @@ public class PriorityWindowController {
         if(preemptiveBox.isSelected()){
             publicVariablesObject.permative = Boolean.TRUE;
         }
-        else{
-            publicVariablesObject.permative = Boolean.FALSE;
-        }
     }
 
-   /* public void priorityBack(ActionEvent event) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("start.fxml"));
+    @FXML
+    public void homeEntered(ActionEvent event) throws Exception{
+        Parent root = FXMLLoader.load(getClass().getResource("../start.fxml"));
         helloObject.getStage().setTitle("CPU Scheduler");
-        helloObject.getStage().setScene(new Scene(root));
+        helloObject.getStage().setScene(new Scene(root, 980, 512));
     }
 
-    */
 }

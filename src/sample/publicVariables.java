@@ -16,12 +16,10 @@ public class publicVariables {
     public static ArrayList<Integer> priority = new ArrayList(100);
 
 
-
     //                         [start,burst,number of process]
     public static ArrayList<ArrayList<Integer>> processData = new ArrayList(100);
 
     public static int quantum;
-
 
     public void makeCombination() {
         for (int x = 0; x < starts.size(); x++) {
@@ -58,16 +56,10 @@ public class publicVariables {
         }
     }
 
-    public void indexingProcess() {
-        for (int x = 0; x < processData.size(); x++) {
-            processData.get(x).add(x + 1);
-        }
-    }
-
     public Button makeButton(int processIndex, int width) {
         Button H = new Button();
         //timeline variable to have a timeline dependent on all processes;
-        H.setText("Process " + (processIndex) + "\n" + "\t   ");
+        H.setText("P" + (processIndex) + "\n\n" +"\t"+ String.valueOf(width) );
         H.setAlignment(Pos.CENTER);
         H.setMinHeight(100);
         H.setMinWidth(width * 50);
@@ -157,17 +149,6 @@ public class publicVariables {
             }
             return index;
 
-    }
-
-    public Button makeButton(int processIndex, int width,float arrival,float finish) {
-        Button H = new Button();
-        //timeline variable to have a timeline dependent on all processes;
-        H.setText("Process " + (processIndex) + "\n" + arrival +"\t"+finish);
-        H.setAlignment(Pos.CENTER);
-        H.setMinHeight(100);
-        H.setMinWidth(width * 50);
-
-        return H;
     }
 
 
