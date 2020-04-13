@@ -31,18 +31,17 @@ public class RRChartController2 {
 
         pbvo.ordering(0); //order according to start time
 
-        int totalTime = 0;
         for (int x = 0; x < pbvo.processData.size(); x++) {
             pbvo.processData.get(x).add(0);             //add new element in process data about avgTime(arrival - beginTime)
-            totalTime += pbvo.processData.get(x).get(1);
         }
 
         int timeLine = pbvo.processData.get(0).get(0);
-
+        int latestArrivalTime = pbvo.processData.get(pbvo.processData.size()-1).get(0);
 
         for(int m=0;m<1000;m++) {
             try {
                 addProcesses(timeLine);
+                System.out.println(workProcess);
 
                 if( !workProcess.isEmpty() )
                 {
@@ -56,7 +55,6 @@ public class RRChartController2 {
                         width = workProcess.get(0).get(1);
                     }
 
-                    //formButton(width, 0);
                     formButtonTime(width,0,timeLine,timeLine+width);
 
                     timeLine += width;
@@ -64,7 +62,7 @@ public class RRChartController2 {
                     workProcess.get(0).set(1, workProcess.get(0).get(1) - width); // set new burst time
                     workProcess.get(0).set(0, timeLine);  //set new timeline as arrival time
 
-                    putProcessAtEnd();  //put the latest process u worked on at end
+                    putProcessAtEnd(timeLine,latestArrivalTime);  //put the latest process u worked on at end
 
                     workProcess.clear();
                 }
@@ -133,14 +131,24 @@ public class RRChartController2 {
         averageTime.setText(String.valueOf(totalAvg/pbvo.processData.size()));
     }
 
-    public void putProcessAtEnd()
+    public void putProcessAtEnd(int timeline,int lateArrival)
     {
         for(int x=0;x<pbvo.processData.size();x++)
         {
             if(pbvo.processData.get(x).get(2) == workProcess.get(0).get(2))
             {
                 pbvo.processData.remove(x);
-                pbvo.processData.add(workProcess.get(0));
+                if(timeline<lateArrival){
+                    for(int y=0;y<pbvo.processData.size();y++){
+                        if(pbvo.processData.get(y).get(0)>timeline){
+                            pbvo.processData.add(y,workProcess.get(0));
+                            break;
+                        }
+                    }
+                }else {
+                    pbvo.processData.add(workProcess.get(0));
+                }
+                break;
             }
         }
     }
