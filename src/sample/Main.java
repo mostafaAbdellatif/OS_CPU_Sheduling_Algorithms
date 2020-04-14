@@ -26,6 +26,7 @@ public class Main extends Application  {
         window = primaryStage;
         Parent root = FXMLLoader.load(getClass().getResource("start.fxml"));
         window.setTitle("CPU Scheduler");
+        window.setResizable(false);
         window.setScene(new Scene(root, 980, 512));
         window.show();
     }

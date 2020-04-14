@@ -108,6 +108,7 @@ public class PriorityGantController {
                         H.setMinHeight(100);
                         H.setMinWidth((publicVariablesObject.processData.get(0).get(1)) * 100);
                         avgWaitTime += timeline-time_on_cpu-(publicVariablesObject.processData.get(0).get(0));
+                        //System.out.println("wait time 1"+avgWaitTime);
                         gantchart.getChildren().add(H);
                         publicVariablesObject.processData.remove(0);
                         time_on_cpu = 0;
@@ -125,6 +126,7 @@ public class PriorityGantController {
                         H.setMinWidth(time_on_cpu * 100);
                         gantchart.getChildren().add(H);
                         avgWaitTime += timeline-time_on_cpu-(publicVariablesObject.processData.get(previous_on_cpu_index).get(0));
+                        //System.out.println("wait time 2"+avgWaitTime);
                         publicVariablesObject.processData.remove(previous_on_cpu_index);
                         time_on_cpu = 0;
                         size--;
@@ -138,6 +140,8 @@ public class PriorityGantController {
                         //H.setMinWidth((publicVariablesObject.processData.get(previous_on_cpu_index).get(1)) * 50);
                         H.setMinWidth(time_on_cpu * 100);
                         avgWaitTime += timeline-time_on_cpu-(publicVariablesObject.processData.get(previous_on_cpu_index).get(0));
+                        publicVariablesObject.processData.get(previous_on_cpu_index).set(0,timeline);//to fix avg wait time
+                        //System.out.println("wait time 3"+avgWaitTime);
                         gantchart.getChildren().add(H);
                         time_on_cpu = 0;
 

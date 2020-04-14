@@ -16,10 +16,10 @@ public class SJHChartController2 {
 
     static ArrayList<ArrayList<Integer>> workProcess = new ArrayList(20);
 
-    static Button past;
-    static int lastProcess;
-    static int width;
-    static int oldTimeLine;
+    Button past;
+    int lastProcess;
+    int width;
+    int oldTimeLine;
 
     @FXML
     private HBox gantchart;

@@ -9,47 +9,52 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="571.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ShortJobFirst.SJFController">
-  <content>
-    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="641.0" prefWidth="584.0">
-         <children>
-            <Label layoutX="195.0" layoutY="32.0" text="Short Job First">
+<ScrollPane fitToHeight="true" fitToWidth="true" pannable="true" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ShortJobFirst.SJFController">
+    <content>
+        <AnchorPane prefHeight="512.0" prefWidth="691.0">
+            <children>
+                <Label alignment="CENTER" contentDisplay="CENTER" layoutX="189.0" layoutY="47.0" prefHeight="80.0" prefWidth="300.0" text="Shortest Job First" AnchorPane.leftAnchor="152.0" AnchorPane.rightAnchor="152.0">
+                    <font>
+                        <Font size="31.0" />
+                    </font>
+                </Label>
+                <TextField fx:id="noProcesses" layoutX="309.0" layoutY="143.0" prefHeight="30.0" prefWidth="217.0" promptText="Enter The Number Of Processes" AnchorPane.leftAnchor="309.0" AnchorPane.rightAnchor="165.0">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </TextField>
+                <Label contentDisplay="CENTER" layoutX="137.0" layoutY="140.0" prefHeight="35.0" prefWidth="186.0" text="Number of porcesses :">
+                    <font>
+                        <Font size="17.0" />
+                    </font>
+                </Label>
+                <VBox fx:id="processId" alignment="TOP_CENTER" layoutX="149.0" layoutY="242.0" prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="70.0" AnchorPane.topAnchor="242.0" />
+                <VBox fx:id="startTime" alignment="TOP_CENTER" layoutX="266.0" layoutY="239.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="70.0" AnchorPane.topAnchor="239.0" />
+                <VBox fx:id="burstTime" alignment="TOP_CENTER" layoutX="397.0" layoutY="239.0" prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="70.0" AnchorPane.topAnchor="239.0" />
+                <Button fx:id="okButton" layoutX="550.0" layoutY="161.0" mnemonicParsing="false" onAction="#okEntred" prefHeight="39.0" prefWidth="59.0" text="ok" AnchorPane.rightAnchor="82.0" />
+                <Button fx:id="beginButton" contentDisplay="BOTTOM" layoutX="623.0" layoutY="457.0" mnemonicParsing="false" onAction="#beginEntered" prefHeight="41.0" prefWidth="54.0" text="ok" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="14.0" />
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="149.0" layoutY="212.0" prefHeight="22.0" prefWidth="100.0" text="Process ID" textAlignment="CENTER">
                <font>
-                  <Font size="31.0" />
+                  <Font size="18.0" />
                </font>
             </Label>
-            <Label layoutX="33.0" layoutY="104.0" prefHeight="34.0" prefWidth="151.0" text="number of process: ">
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="266.0" layoutY="212.0" prefHeight="22.0" prefWidth="100.0" text="Start">
+                      <font>
+                          <Font size="18.0" />
+                      </font>
+                  </Label>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="397.0" layoutY="212.0" prefHeight="22.0" prefWidth="100.0" text="Burst">
                <font>
-                  <Font size="17.0" />
+                  <Font size="18.0" />
                </font>
             </Label>
-            <TextField fx:id="noProcesses" layoutX="208.0" layoutY="109.0" />
-            <Label layoutX="59.0" layoutY="161.0" text="Processes">
+            <CheckBox fx:id="permativeBox" alignment="TOP_RIGHT" contentDisplay="RIGHT" layoutX="470.0" layoutY="106.0" mnemonicParsing="false" onAction="#handlePermativeBox" text="Preemitive" AnchorPane.rightAnchor="123.0" AnchorPane.topAnchor="106.0">
                <font>
-                  <Font size="23.0" />
+                  <Font size="15.0" />
                </font>
-            </Label>
-            <Label layoutX="242.0" layoutY="161.0" prefHeight="34.0" prefWidth="49.0" text="Start">
-               <font>
-                  <Font size="23.0" />
-               </font>
-            </Label>
-            <Label layoutX="390.0" layoutY="161.0" text="burst">
-               <font>
-                  <Font size="23.0" />
-               </font>
-            </Label>
-            <VBox fx:id="processId" layoutX="59.0" layoutY="221.0" prefHeight="200.0" prefWidth="100.0" />
-            <VBox fx:id="startTime" layoutX="217.0" layoutY="221.0" prefHeight="200.0" prefWidth="100.0" />
-            <VBox fx:id="burstTime" layoutX="377.0" layoutY="221.0" prefHeight="200.0" prefWidth="100.0" />
-            <Button fx:id="okButton" layoutX="457.0" layoutY="106.0" mnemonicParsing="false" onAction="#okEntred" text="OK">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </Button>
-            <Button fx:id="beginButton" layoutX="507.0" layoutY="487.0" mnemonicParsing="false" onAction="#beginEntered" text="Begin" />
-            <CheckBox fx:id="permativeBox" layoutX="507.0" layoutY="442.0" mnemonicParsing="false" onAction="#handlePermativeBox" text="permative" />
-            <Button fx:id="BackToHome" layoutX="27.0" layoutY="32.0" mnemonicParsing="false" onAction="#homeEntered" text="Back To Home" />
-         </children></AnchorPane>
-  </content>
+            </CheckBox>
+            <Button fx:id="BackToHome" layoutX="34.0" layoutY="457.0" mnemonicParsing="false" onAction="#homeEntered" prefHeight="41.0" prefWidth="54.0" text="Back" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="34.0" />
+            </children>
+        </AnchorPane>
+    </content>
 </ScrollPane>

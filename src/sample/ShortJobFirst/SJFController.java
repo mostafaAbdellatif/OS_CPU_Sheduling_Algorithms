@@ -148,7 +148,7 @@ public class SJFController {
 
     @FXML
     public void homeEntered(ActionEvent event) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("../start.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("start.fxml"));
         helloObject.getStage().setTitle("CPU Scheduler");
         helloObject.getStage().setScene(new Scene(root, 980, 512));
     }

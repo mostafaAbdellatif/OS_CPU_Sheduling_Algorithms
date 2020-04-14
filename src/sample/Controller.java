@@ -27,8 +27,8 @@ public class Controller {
     @FXML
     public void pressFCFSButton(ActionEvent actionEvent) throws IOException {
 
-        Parent root = FXMLLoader.load(getClass().getResource("fcfswin.fxml"));
-        helloObject.getStage().setTitle("FSFC");
+        Parent root = FXMLLoader.load(getClass().getResource("FCFSWin.fxml"));
+        helloObject.getStage().setTitle("FCFS");
         helloObject.getStage().setScene(new Scene(root));
 
     }
@@ -55,7 +55,7 @@ public class Controller {
     @FXML
     public void pressPriorityButton(ActionEvent actionEvent) throws IOException {
 
-        Parent root = FXMLLoader.load(getClass().getResource("Priority/PriorityWindow.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("Priority/PriorityWin.fxml"));
         helloObject.getStage().setTitle("Priority");
         helloObject.getStage().setScene(new Scene(root));
 

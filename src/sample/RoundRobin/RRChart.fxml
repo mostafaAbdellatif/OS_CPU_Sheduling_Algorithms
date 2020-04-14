@@ -6,34 +6,30 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
 
-<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.RoundRobin.RRChartController2">
-  <content>
-    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="484.0" prefWidth="656.0">
+<ScrollPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.RoundRobin.RRChartController2">
+   <content>
+      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="1200.0">
          <children>
-            <Label layoutX="202.0" layoutY="23.0" prefHeight="53.0" prefWidth="195.0" text="Gantt Chart">
-               <font>
-                  <Font size="36.0" />
-               </font>
-            </Label>
-            <Label layoutX="31.0" layoutY="317.0" text="Average Time:">
-               <font>
-                  <Font size="30.0" />
-               </font>
-            </Label>
-            <Label fx:id="averageTime" layoutX="250.0" layoutY="331.0">
-               <font>
-                  <Font size="28.0" />
-               </font>
-            </Label>
-            <ScrollPane layoutX="1.0" layoutY="83.0" prefHeight="234.0" prefWidth="586.0">
-              <content>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="222.0" prefWidth="2000.0">
-                     <children>
-                        <HBox fx:id="gantchart" layoutX="-1.0" layoutY="1.0" prefHeight="2000.0" prefWidth="977.0" />
-                     </children>
-                  </AnchorPane>
-              </content>
+            <ScrollPane layoutY="150.0" prefHeight="100.0" prefWidth="1200.0" AnchorPane.bottomAnchor="150.0" AnchorPane.topAnchor="150.0">
+               <content>
+                  <HBox fx:id="gantchart" prefHeight="100.0" prefWidth="1200.0" />
+               </content>
             </ScrollPane>
-         </children></AnchorPane>
-  </content>
+            <Label layoutX="193.0" layoutY="50.0" prefHeight="74.0" prefWidth="217.0" text="Gantt Chart" AnchorPane.leftAnchor="491.0" AnchorPane.rightAnchor="491.0">
+               <font>
+                  <Font size="40.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" contentDisplay="BOTTOM" layoutX="57.0" layoutY="333.0" prefHeight="31.0" prefWidth="220.0" text="Average Waiting Time">
+               <font>
+                  <Font name="System Bold Italic" size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="averageTime" contentDisplay="BOTTOM" layoutX="303.0" layoutY="333.0" prefHeight="31.0" prefWidth="261.0">
+               <font>
+                  <Font size="20.0" />
+               </font></Label>
+         </children>
+      </AnchorPane>
+   </content>
 </ScrollPane>
